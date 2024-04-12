@@ -56,6 +56,8 @@ export function Description({ data }: Props) {
       qc.invalidateQueries({
         queryKey: ['card', data.id],
       });
+      qc.invalidateQueries({ queryKey: ['card-logs', data.id] });
+
       toast.success(`Card "${data.title} updated"`);
       disableEditing();
     },

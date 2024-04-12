@@ -24,6 +24,7 @@ export const Header = ({ data }: Props) => {
   const { execute } = useAction(updateCard, {
     onSuccess: (data) => {
       qc.invalidateQueries({ queryKey: ['card', data.id] });
+      qc.invalidateQueries({ queryKey: ['card-logs', data.id] });
 
       toast.success(`Renamed to ${data.title}`);
       setTitle(data.title);
