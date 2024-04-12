@@ -78,7 +78,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     };
   }
 
-  revalidatePath(`/board/${orgId}`);
+  revalidatePath(`/board/${boardId}`);
   return { data: list };
 };
 
